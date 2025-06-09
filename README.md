@@ -4,7 +4,10 @@ A tool for simulating DNA reads with variants from VCF files.
 
 ## Installation
 
+### Manual Istallation
 ```bash
+git clone https://github.com/eamozheiko/mixit.git
+cd mixit
 pip install -e .
 ```
 
