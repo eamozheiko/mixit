@@ -1,11 +1,10 @@
-# Mixit - Mix your DNA Simulator 2000
+# Mixit
 
 A tool for simulating DNA reads with variants from VCF files.
 
 ## Installation
 
 ```bash
-pip install -r requirements.txt
 pip install -e .
 ```
 
@@ -30,11 +29,12 @@ mixit -v input.vcf -r reference.fasta -l 150 -n 10000 -o output.fasta
 - `--min-mq`: Minimum mapping quality (MQ, default: 40)
 - `--min-af`: Minimum allele frequency (AF, default: 0.0)
 
-## Example
+Citation
+--------
 
-```bash
-mixit -v demo/filtered.vcf -r demo/whole_pangenome.fasta -l 1000 -n 10 -o consensus.fasta
-```
+If you use Mixit in your research, the most relevant link to cite is:
+
+* https://github.com/eamozheiko/mixit
 
 ### Running Tests
 ```bash
