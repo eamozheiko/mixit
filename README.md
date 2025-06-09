@@ -38,12 +38,3 @@ Citation
 If you use Mixit in your research, the most relevant link to cite is:
 
 * https://github.com/eamozheiko/mixit
-
-### Running Tests
-```bash
-python -m pytest tests/
-```
-
-## License
-
-MIT License 
