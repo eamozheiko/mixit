@@ -14,7 +14,7 @@ pip install -e .
 ## Usage
 
 ```bash
-mixit -v input.vcf -r reference.fasta -l 150 -n 10000 -o output.fasta
+mixit -v demo/filtered.vcf -r demo/whole_pangenome.fasta -l 150 -n 10000 -o consensus.fasta
 ```
 
 ### Command Line Arguments
