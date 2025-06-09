@@ -1,6 +1,13 @@
 # Mixit
 
-A tool for simulating DNA reads with variants from VCF files.
+A bioinformatics tool that generates simulated DNA sequencing reads containing variants from a multi-sample VCF file. The tool produces a specified number of reads with fixed length, randomly distributed across a provided reference genome (FASTA format).
+
+Key Features:
+- Processes VCF files containing multiple samples
+- Simulates reads incorporating variants (SNVs, indels)
+- Works with standard reference genomes (FASTA)
+- Configurable read length, number of reads and min allele fraction
+- Random positional distribution across genome (without repeats)
 
 ## Installation
 
