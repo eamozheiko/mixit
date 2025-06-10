@@ -24,8 +24,8 @@ def prepare_args():
     general.add_argument("--version", action="version", version="%(prog)s " + Mixit_VERSION)
     general.add_argument("-v", "--vcf", dest="vcf", type=str, required=True, help="Input VCF file")
     general.add_argument("-r", "--reference", dest="fasta", required=True, help="Reference FASTA file")
-    general.add_argument("-l", "--length", dest="length", type=int, default=150, help="Consensus length")
-    general.add_argument("-n", "--number", dest="number", type=int, default=10000, help="Number of consensuses per sample")
+    general.add_argument("-l", "--length", dest="length", type=int, default=150, help="Simulated read's length")
+    general.add_argument("-n", "--number", dest="number", type=int, default=10000, help="Nessesary number of reads to simulate")
     general.add_argument("-o", "--output", dest="output", default="consensus.fasta", help="Output FASTA file")
 
     # Filtering Options
