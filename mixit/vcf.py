@@ -17,9 +17,7 @@ class VCFRecord:
 
     def get_gt(self, sample_index):
         """Get genotype string (e.g., '0/1') for a given sample index."""
-        if 0 <= sample_index < len(self.sample_data):
-            return self.sample_data[sample_index].split(":")[0]
-        return ""
+        return self.sample_data[sample_index].split(":")[0]
 
     def has_variant(self, sample_index):
         """Check for the presence of a variant in a specific sample."""

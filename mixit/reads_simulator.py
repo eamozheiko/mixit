@@ -21,6 +21,7 @@ class ReadSimulator:
         self.vcf_reader = None
         self.fasta = None
         self.fasta_iter = None
+        self.samples = []
         self.n_samples = 0
         
         # Simulation data for current contig
@@ -95,8 +96,9 @@ class ReadSimulator:
         if vcf_records:
             read.apply_variants(vcf_records, self.random_samples[read_idx])
             self.reads_with_applied_variants += 1
-            
-        read.write_to_file(out_file)
+        
+        sample_name = self.samples[self.random_samples[read_idx]]
+        read.write_to_file(out_file, sample_name)
         self.total_reads += 1
 
     def run(self):
@@ -106,8 +108,8 @@ class ReadSimulator:
             os.remove(self.args.output)
 
         # Get samples list
-        samples = get_vcf_samples(self.args.vcf)
-        self.n_samples = len(samples)
+        self.samples = get_vcf_samples(self.args.vcf)
+        self.n_samples = len(self.samples)
 
         # Read FASTA
         self.fasta = Fasta(self.args.fasta)

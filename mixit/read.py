@@ -7,14 +7,14 @@ class Read:
         self.end = end
         self.sequence = full_sequence[start:end]  # Extract subsequence
 
-    def apply_variants(self, vcf_records, sample_name):
+    def apply_variants(self, vcf_records, sample_id):
         """Apply VCF variants to the read sequence."""
         seq = list(self.sequence)
         offset = self.start  # Genomic coordinate of seq[0]
         pos_shift = 0        # Track shift in read index due to insertions/deletions
 
         for record in vcf_records:
-            if not record.has_variant(sample_name):
+            if not record.has_variant(sample_id):
                 continue
             # VCF position is 1-based, convert to 0-based
             in_read_pos = record.pos - 1 - offset + pos_shift
@@ -29,6 +29,6 @@ class Read:
 
         self.sequence = "".join(seq)
 
-    def write_to_file(self, out_file):
+    def write_to_file(self, out_file, sample_name):
         """Write the read in FASTA format to an already open file handle"""
-        out_file.write(f">{self.contig}:{self.start}:{self.end}\n{self.sequence}\n")
+        out_file.write(f">{self.contig}:{sample_name}:{self.start}:{self.end}\n{self.sequence}\n")
