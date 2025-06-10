@@ -29,8 +29,8 @@ mixit -v demo/filtered.vcf -r demo/whole_pangenome.fasta -l 150 -n 10000 -o cons
 #### General Options
 - `-v, --vcf`: Input VCF file (required)
 - `-r, --reference`: Reference FASTA file (required)
-- `-l, --length`: Consensus length (default: 150)
-- `-n, --number`: Number of consensuses per sample (default: 10000)
+- `-l, --length`: Simulated read's length (default: 150)
+- `-n, --number`: Nessesary number of reads to simulate (default: 10000)
 - `-o, --output`: Output FASTA file (default: consensus.fasta)
 
 #### Filtering Options
