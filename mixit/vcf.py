@@ -21,9 +21,9 @@ class VCFRecord:
             return self.sample_data[sample_index].split(":")[0]
         return ""
 
-    def has_variant(self, sample_name):
+    def has_variant(self, sample_index):
         """Check for the presence of a variant in a specific sample."""
-        gt = self.get_gt(sample_name)
+        gt = self.get_gt(sample_index)
         if "." in gt or gt == "0/0":
             return False
         return True
